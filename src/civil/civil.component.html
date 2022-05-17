@@ -1,0 +1,30 @@
+<div class="card">
+    <p-table class="m-2" #dt1 [value]="productss" [globalFilterFields]="['name']">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #ip (input)="dt1.filterGlobal(ip.value, 'contains')" placeholder="Search subject name" />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="sno">S.NO <p-sortIcon field="sno"></p-sortIcon></th>
+                <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                <th pSortableColumn="semester">Semester <p-sortIcon field="semester"></p-sortIcon></th>
+                <th pSortableColumn="year">Year <p-sortIcon field="year"></p-sortIcon></th>
+                <th>Link</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr >
+                <td>{{product.sno}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.semester}}</td>
+                <td>{{product.year}}</td>
+                <td><a href="{{product.link}}" target="_blank">Click to Download</a></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

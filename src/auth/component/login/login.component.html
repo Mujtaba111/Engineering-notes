@@ -1,0 +1,40 @@
+<p-toast position="top-center"></p-toast>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+<form [formGroup]="loginForm">
+
+    <img class="mb-4" src="../../../../../assets/images/logo.png" alt="" >
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+
+    <div class="form-floating">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText formControlName="email"> 
+            <label for="float-input">Username</label>
+        </span>
+    </div>
+
+
+    <div class="form-floating">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText formControlName="password"> 
+            <label for="float-input">Password</label>
+        </span>
+    </div>
+
+
+    <!-- <div class="checkbox mb-3">
+      <input type="checkbox" value="remember-me"> Remember me
+    </div> -->
+    <div class="m-2">
+        <button pButton (click)="login()" type="button" label="Login"></button>
+        <a routerLink="/register" routerLinkActive="active"><button pButton type="button" label="Register"></button></a>
+    <a routerLink="/auth/forgot-password" routerLinkActive="active"><p >Forgot Password</p></a>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+</div>
+
+  </form>
+</div>
+</div>
+</div>
